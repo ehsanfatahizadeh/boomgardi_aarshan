@@ -9,6 +9,18 @@
 
     <style>
 
+
+        @font-face {
+            font-family: "iran";
+            src: url("iranyekanwebregular.ttf");
+        }
+
+
+        body,div,input,button{
+            font-family: iran !important;
+        }
+
+
         html,body{
             padding: 0;
             margin: 0;
@@ -40,13 +52,21 @@
 </head>
 <body>
 
-<div id="first_page" style="width: 100%; float: left; height: 100vh">
-    <div style="width: 80%; margin-left: 10%; float: left; text-align: center; font-size: 30px; color: black; margin-top: 15px;">منو</div>
+
+<div id="info_user" style="width: 100%; float: left; height: 100vh; display: block; background-color: white">
+    <div style="width: calc(100% - 40px); float: left; margin-left: 20px; text-align: center; font-size: 14px; color: black; margin-top: 50px;">شماره اتاق خود را وارد کنید</div>
+    <input id="room_number" placeholder="0" type="number" style="width: 100px; float: left; margin-left: calc(50% - 50px); padding-top: 8px; padding-bottom: 8px; margin-top: 15px; text-align: center; color: black;">
+    <div onclick="sabte_info_user()" style="width: 80px; float: left; margin-top: 15px; margin-left: calc(50% - 40px); font-size: 12px;  background-color: deeppink; color: white; text-align: center; padding-top: 8px; padding-bottom: 8px; border-style: solid; border-radius: 10px;">ثبت</div>
+
+</div>
+
+<div id="first_page" style="width: 100%; float: left; height: 100vh; display: none">
+    <div style="width: 80%; margin-left: 10%; float: left; text-align: center; font-size: 30px; color: black; margin-top: 15px;">بوم گردی عرشان</div>
 
 
     <div id="final_order" style="width: 80%; margin-left: 10%; display: none; float: left; text-align: center; font-size: 30px; color: black; margin-top: 15px;">
 
-        <div onclick="sabte_nahaei()" style="width: 80px; position:fixed; left: 10px; top: 10px; background-color: deeppink; color: white; text-align: center; padding-top: 8px; padding-bottom: 8px; border-style: solid; border-radius: 10px;">ثبت نهایی</div>
+        <div onclick="sabte_nahaei()" style="width: 80px; font-size: 12px; position:fixed; left: 10px; top: 10px; background-color: deeppink; color: white; text-align: center; padding-top: 8px; padding-bottom: 8px; border-style: solid; border-radius: 10px;">ثبت نهایی</div>
 
         <div id="text_order_final" style="width: calc(100% - 100px); float: left; text-align: right; font-size: 14px; color: black; margin-top: 15px;">
         </div>
@@ -121,10 +141,11 @@
 
 
 <script>
-    event.preventDefault();
+
     var text_order_break_fast = '';
     var text_order_ghaza = '';
     var text_order_ghelyan = '';
+    var room_number_text = '';
     function breakfast_clicked(){
         alert('215');
         document.getElementById('order_menu_breakfast').style.display = 'block';
@@ -143,7 +164,7 @@
             if (text_order_break_fast == ''){
                 text_order_break_fast = 'نیمرو : ' + tedad_nimru;
             }else{
-                text_order_break_fast = text_order_break_fast + '-\n' +  'نیمرو : ' + tedad_nimru;
+                text_order_break_fast = text_order_break_fast + '----' +  'نیمرو : ' + tedad_nimru;
             }
         }
 
@@ -151,7 +172,7 @@
             if (text_order_break_fast == ''){
                 text_order_break_fast = 'املت : ' + tedad_omlet;
             }else{
-                text_order_break_fast = text_order_break_fast + '-\n' +  'املت : ' + tedad_omlet;
+                text_order_break_fast = text_order_break_fast + '----' +  'املت : ' + tedad_omlet;
             }
         }
 
@@ -159,7 +180,7 @@
             if (text_order_break_fast == ''){
                 text_order_break_fast = 'خاگینه : ' + tedad_nimru;
             }else{
-                text_order_break_fast = text_order_break_fast + '-\n' +  'خاگینه : ' + tedad_nimru;
+                text_order_break_fast = text_order_break_fast + '----' +  'خاگینه : ' + tedad_nimru;
             }
         }
 
@@ -174,8 +195,21 @@
 
     function sabte_nahaei(){
 
-        window.open('sms://+989191934639?body='+text_order_break_fast + text_order_ghaza + text_order_ghelyan);
+        window.open('sms://+989191934639?body='+'شماره اتاق : '+room_number_text+'----'+text_order_break_fast + text_order_ghaza + text_order_ghelyan);
 
+    }
+
+
+
+    function sabte_info_user(){
+        var room_nummber = parseInt(document.getElementById('room_number').value.trim());
+        if (room_nummber > 0){
+            room_number_text = room_nummber;
+            document.getElementById('info_user').style.display = 'none';
+            document.getElementById('first_page').style.display = 'block';
+        }else{
+            alert('شماره اتاق خود را وارد کنید!');
+        }
     }
 </script>
 
