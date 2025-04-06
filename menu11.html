@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>منو</title>
+
+    <style>
+
+
+        @font-face {
+            font-family: "iran";
+            src: url("iranyekanwebregular.ttf");
+        }
+
+
+        body,div,input,button{
+            font-family: iran !important;
+        }
+
+
+        html,body{
+            padding: 0;
+            margin: 0;
+        }
+
+
+        html {
+            font-size: 20px !important; /* Default */
+        }
+        .card {
+            float: left;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 40%;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="info_user" style="width: 100%; float: left; height: 100vh; display: block; background-color: white">
+    <div style="width: calc(100% - 40px); float: left; margin-left: 20px; text-align: center; font-size: 14px; color: black; margin-top: 50px;">شماره اتاق خود را وارد کنید</div>
+    <input id="room_number" placeholder="0" type="number" style="width: 100px; float: left; margin-left: calc(50% - 50px); padding-top: 8px; padding-bottom: 8px; margin-top: 15px; text-align: center; color: black;">
+    <div onclick="sabte_info_user()" style="width: 80px; float: left; margin-top: 15px; margin-left: calc(50% - 40px); font-size: 12px;  background-color: deeppink; color: white; text-align: center; padding-top: 8px; padding-bottom: 8px; border-style: solid; border-radius: 10px;">ثبت</div>
+
+</div>
+
+<div id="first_page" style="width: 100%; float: left; height: 100vh; display: none">
+    <div style="width: 80%; margin-left: 10%; float: left; text-align: center; font-size: 30px; color: black; margin-top: 15px;">بوم گردی عرشان</div>
+
+
+    <div id="final_order" style="width: 80%; margin-left: 10%; display: none; float: left; text-align: center; font-size: 30px; color: black; margin-top: 15px;">
+
+        <div onclick="sabte_nahaei()" style="width: 80px; font-size: 12px; position:fixed; left: 10px; top: 10px; background-color: deeppink; color: white; text-align: center; padding-top: 8px; padding-bottom: 8px; border-style: solid; border-radius: 10px;">ثبت نهایی</div>
+
+        <div id="text_order_final" style="width: calc(100% - 100px); float: left; text-align: right; font-size: 14px; color: black; margin-top: 15px;">
+        </div>
+    </div>
+
+    <div onclick="breakfast_clicked()" class="card">
+        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">
+        <div style="direction: rtl" class="container">
+            <h4><b>صبحانه</b></h4>
+            <p></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">
+        <div style="direction: rtl" class="container">
+            <h4><b>غذا</b></h4>
+            <p></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">
+        <div style="direction: rtl" class="container">
+            <h4><b>قلیان</b></h4>
+            <p></p>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div id="order_menu_breakfast" style="width: 100%; position: fixed; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 80%; margin-left: 10%; float: left; text-align: center; font-size: 30px; color: black; margin-top: 15px;">صبحانه</div>
+    <img onclick="close_breakfast_clicked()" src="https://img.icons8.com/ios_filled/512/delete-sign--v2.png" style="width: 30px; height: 30px; position: fixed; top: 10px; right: 10px">
+    <div onclick="sabte_sobhane()" style="width: 80px; position:fixed; left: 10px; top: 10px; background-color: deeppink; color: white; text-align: center; padding-top: 8px; padding-bottom: 8px; border-style: solid; border-radius: 10px;">ثبت</div>
+
+    <div class="card">
+        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">
+        <div style="direction: rtl" class="container">
+            <h4><b>نیمرو</b></h4>
+            <p>تعداد:<input id="sobhane_nimru" type="number" style="width: 80px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">
+        <div style="direction: rtl" class="container">
+            <h4><b>املت</b></h4>
+            <p>تعداد:<input id="sobhane_omlet" type="number" style="width: 80px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">
+        <div style="direction: rtl" class="container">
+            <h4><b>خاگینه</b></h4>
+            <p>تعداد:<input id="sobhane_khagine" type="number" style="width: 80px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></p>
+        </div>
+    </div>
+
+</div>
+
+<span id="pre_text_sms" style="display: none; direction: rtl"></span>
+
+
+
+</body>
+
+
+<script>
+
+    var text_order_break_fast = '';
+    var text_order_ghaza = '';
+    var text_order_ghelyan = '';
+    var room_number_text = '';
+    function breakfast_clicked(){
+        document.getElementById('order_menu_breakfast').style.display = 'block';
+        document.getElementById('first_page').style.display = 'none';
+    }
+    function close_breakfast_clicked(){
+        document.getElementById('order_menu_breakfast').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+    }
+    function sabte_sobhane(){
+        var tedad_nimru = parseInt(document.getElementById('sobhane_nimru').value.trim());
+        var tedad_omlet = parseInt(document.getElementById('sobhane_omlet').value.trim());
+        var tedad_khagine = parseInt(document.getElementById('sobhane_khagine').value.trim());
+
+        if(tedad_nimru > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'نیمرو ' + tedad_nimru;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'نیمرو ' + tedad_nimru;
+            }
+        }
+
+        if(tedad_omlet > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'املت ' + tedad_omlet;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'املت ' + tedad_omlet;
+            }
+        }
+
+        if(tedad_khagine > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'خاگینه ' + tedad_khagine;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'خاگینه ' + tedad_khagine;
+            }
+        }
+
+        document.getElementById('order_menu_breakfast').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_break_fast + text_order_ghaza + text_order_ghelyan;
+        document.getElementById('final_order').style.display = 'block';
+
+    }
+
+
+
+
+    function sabte_nahaei(){
+
+
+
+        const encodedMessage = encodeURIComponent('----'+'شماره اتاق '+room_number_text+'----'+text_order_break_fast + text_order_ghaza + text_order_ghelyan);
+        const smsUri = format_sms + encodedMessage;
+        location.href = smsUri;
+        // var finalll_sms = ;
+        // document.getElementById('pre_text_sms').innerHTML = finalll_sms;
+        // window.open(format_sms+encodeURIComponent('----'+'شماره اتاق '+room_number_text+'----'+text_order_break_fast + text_order_ghaza + text_order_ghelyan));
+    }
+
+
+
+    function sabte_info_user(){
+        var room_nummber = parseInt(document.getElementById('room_number').value.trim());
+        if (room_nummber > 0){
+            room_number_text = room_nummber;
+            document.getElementById('info_user').style.display = 'none';
+            document.getElementById('first_page').style.display = 'block';
+        }else{
+            alert('شماره اتاق خود را وارد کنید!');
+        }
+    }
+
+
+
+    var deviceName = '';
+
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        Datalogic: function() {
+            return navigator.userAgent.match(/DL-AXIS/i);
+        },
+        Bluebird: function() {
+            return navigator.userAgent.match(/EF500/i);
+        },
+        Honeywell: function() {
+            return navigator.userAgent.match(/CT50/i);
+        },
+        Zebra: function() {
+            return navigator.userAgent.match(/TC70|TC55/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
+        }
+    };
+
+    if (isMobile.Datalogic())
+        deviceName = 'Datalogic';
+    else if (isMobile.Bluebird())
+        deviceName = 'Bluebird';
+    else if (isMobile.Honeywell())
+        deviceName = 'Honeywell';
+    else if (isMobile.Zebra())
+        deviceName = 'Zebra';
+    else if (isMobile.BlackBerry())
+        deviceName = 'BlackBerry';
+    else if (isMobile.iOS())
+        deviceName = 'iOS';
+    else if ((deviceName == '') && (isMobile.Android()))
+        deviceName = 'Android';
+    else if ((deviceName == '') && (isMobile.Windows()))
+        deviceName = 'Windows';
+
+
+
+    function iOSversion() {
+        if (/iP(hone|od|ad)/.test(navigator.platform)) {
+            // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+            var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+            return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+        }
+    }
+
+    ver = iOSversion();
+
+
+    var format_sms = 'sms:+9891919346391?body=';
+
+    if (deviceName == 'iOS'){
+        if (ver[0] > 7) {
+            format_sms = 'sms:+9891919346391?&body=';
+        }else{
+            format_sms = 'sms:+9891919346391?&body=';
+        }
+    }
+
+
+
+</script>
+
+</html>
