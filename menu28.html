@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+
+
+    <title>منو</title>
+
+    <style>
+
+
+        img{
+            aspect-ratio: 1;
+        }
+
+        @font-face {
+            font-family: "iran";
+            src: url("iranyekanwebregular.ttf");
+        }
+
+
+        body,div,input,button{
+            font-family: iran !important;
+        }
+
+
+        html,body{
+            padding: 0;
+            margin: 0;
+        }
+
+
+
+        html {
+            font-size: 20px !important; /* Default */
+        }
+        .card {
+            float: right;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: calc(100% - 10px);
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="info_user" style="width: 100%; float: left; height: 100vh; display: block; background-color: white">
+    <div style="width: calc(100% - 40px); float: left; margin-left: 20px; text-align: center; font-size: 14px; color: black; margin-top: 50px;">شماره اتاق خود را وارد کنید</div>
+    <input id="room_number" placeholder="0" type="number" style="width: 100px; float: left; margin-left: calc(50% - 50px); padding-top: 8px; padding-bottom: 8px; margin-top: 15px; text-align: center; color: black;">
+    <div onclick="sabte_info_user()" style="width: 80px; float: left; margin-top: 15px; margin-left: calc(50% - 40px); font-size: 12px;  background-color: deeppink; color: white; text-align: center; padding-top: 8px; padding-bottom: 8px; border-style: solid; border-radius: 10px;">ثبت</div>
+
+</div>
+
+<div id="first_page" style="width: 100%; overflow: scroll; float: left; height: 100vh; display: none">
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+        <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">بوم گردی عرشان</div>
+    </div>
+
+
+
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+    <div id="final_order" style="width: 80%; margin-left: 10%; display: none; float: left; text-align: center; font-size: 30px; color: black; margin-top: 15px;">
+
+        <div onclick="sabte_nahaei()" style="width: 80px; font-size: 12px; position:fixed; left: 10px; top: 10px; background-color: deeppink; color: white; text-align: center; padding-top: 8px; padding-bottom: 8px; border-style: solid; border-radius: 10px;">ثبت نهایی</div>
+
+        <div id="text_order_final" style="width: calc(100% - 100px); float: left; text-align: right; font-size: 14px; color: black; margin-top: 15px;">
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div onclick="resturant_clicked()" class="card">
+            <img src="resturant.png" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">رستوران</div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div onclick="menu_cafe_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="cafe.png" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">کافه</div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<div id="order_menu_resturant" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_resturant_clicked()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">رستوران</div>
+        </div>
+        <div style="width: 50px; float: right">
+
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div onclick="pish_ghaza_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="pish_ghaza.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">پیش غذا</div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div onclick="sobhane_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="sobhane.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">صبحانه</div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div onclick="ghaza_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghaza.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">ناهار و شام</div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!--    <div class="card">-->
+<!--        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">-->
+<!--        <div style="direction: rtl" class="container">-->
+<!--            <h4><b>نیمرو</b></h4>-->
+<!--            <p>تعداد:<input id="sobhane_nimru" type="number" style="width: 80px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="card">-->
+<!--        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">-->
+<!--        <div style="direction: rtl" class="container">-->
+<!--            <h4><b>املت</b></h4>-->
+<!--            <p>تعداد:<input id="sobhane_omlet" type="number" style="width: 80px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="card">-->
+<!--        <img src="https://images.services.kitchenstories.io/gxInWDQniM21aQiVgvnXmDrMnvo=/3840x0/filters:quality(85)/images.kitchenstories.io/communityImages/f4604e05f6a9eaca99afddd69e849005_c02485d4-0841-4de6-b152-69deb38693f2.jpg" alt="Avatar" style="width:100%">-->
+<!--        <div style="direction: rtl" class="container">-->
+<!--            <h4><b>خاگینه</b></h4>-->
+<!--            <p>تعداد:<input id="sobhane_khagine" type="number" style="width: 80px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</div>
+
+
+
+
+
+
+
+
+<div id="order_menu_pish_ghaza" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_pish_ghaza()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">پیش غذا</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_pish_ghaza()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">سوپ</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="soop" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">دال عدس</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="dal_adas" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+<div id="order_menu_sobhane" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_sobhane()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">صبحانه</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_sobhane()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">نیمرو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="nimru" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">خاگینه مخصوص عرشان</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="khagine_makhsus" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">خامه عسل</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="khame_asal" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">کره مربا</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="moraba" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">چای و پنیر</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="panir" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">سوسیس تخم مرغ</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="susis_tokhm" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">املت مخصوص عرشان</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="omlet_makhsus" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">عدسی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="adasi" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">نان محلی توموشی ساده</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="noon_sade" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">نان محلی توموشی تخم مرغی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="noon_tokhm" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div id="order_menu_ghaza" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_ghaza()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">ناهار و شام</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_ghaza()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="sambuse_meygu.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">سمبوسه میگو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="sambuse_meygu" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">سمبوسه کولی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="sambuse_kuli" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghalie_mahi_polo.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">قلیه ماهی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="ghalye_mahi" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">قلیه میگو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="ghalye_meygu" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">میگو دو پیازه</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="meygu_do_piazi" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="mahi_shir.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">ماهی سرخ شده(شیر)</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="mahi_shir" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="havari_meygu.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">هواری میگو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="havari_meygu" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="morgh_makhsus.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">مرغ مخصوص عرشان</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="morgh_makhsus" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">سوسیس بندری</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="susis_bandari" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">پودینی کولی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="pudini_kuli" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghorme_sabzi.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">قرمه سبزی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="ghorme_sabzi" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">قیمه</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="gheyme" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">گوبولی مرغ</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="guguli_morgh" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">جوجه ساحلی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="juje_saheli" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">صدف</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="sadaf" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="kharchang.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">خرچنگ</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="kharchang" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="labester.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">لابستر</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="labester" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">ماهی مرکب</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="mahi_morakab" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="kotlet.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">کتلت</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="kotlet" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="polo_irani.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">پلو ایرانی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="polo_irani" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="polo_khareji.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">پلو خارجی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="polo_khareji" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ab.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">آب</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="ab" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="nushabe.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">نوشابه</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="nushabe" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="energy_za.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">انرژی زا</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="energy_za" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 33%; float: right">
+        <div  class="card">
+            <img src="limunad.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">لیموناد</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="limunad" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="order_menu_cafe" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_cafe()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">کافه</div>
+        </div>
+        <div style="width: 50px; float: right">
+
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div onclick="asrane_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="asrane.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">عصرانه</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div onclick="nushidani_sard_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="nushidani_sard.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">نوشیدنی سرد</div>
+
+            </div>
+        </div>
+    </div>
+
+    <div onclick="nushidani_garm_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="nushidani_garm.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">نوشیدنی گرم</div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div onclick="damnush_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="damnush.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">دمنوش</div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div onclick="deser_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="deser.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">دسر</div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div onclick="ghelian_clicked()" style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghelian.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px;float: left; text-align: right; font-size: 14px; margin-bottom: 20px">قلیان</div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<div id="order_menu_asrane" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_asrane()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">عصرانه</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_asrane()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">توموشی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="tumushi" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="sini_maze.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">سینی میوه</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="sini_mive" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">سرویس چای و شیرینی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="servise_chay_shirini" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="order_menu_nushidani_sard" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_nushidani_sard()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">نوشیدنی سرد</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_nushidani_sard()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">اسموتی استوایی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="smuti_ostovaei" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">اسموتی هندوانه</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="hendevane" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="smuti.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">اسموتی مخصوص عرشان</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="smuti_makhsuse_arshan" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">خاکشیر</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="khakshir" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">بهار نارنج</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="bahar_narenj" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">شیک هندوانه</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="sheyk_hendevane" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">شیک توت فرنگی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="tootfarangi" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">شیک شکلات</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="shokolat" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">آیس آمریکانو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="ice_americano" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">آیس لته</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="ice_latte" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">آیس تی</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="ice_tea" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="order_menu_nushidani_garm" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_nushidani_garm()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">نوشیدنی گرم</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_nushidani_garm()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">قهوه ترک</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="ghahve_tork" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="sperso.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">اسپرسو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="sperso" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">آمریکانو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="americano" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">لته</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="latte" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">چای ساده</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="chaye_sade" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="chay_crack.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">چای کرک</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="chay_crack" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">کرک اسپرسو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="crack_sperso" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">ماسالا</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="masala" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">کاپوچینو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="capocino" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="order_menu_damnush" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_damnush()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">دمنوش</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_damnush()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">دمنوش ترش</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="damnushe_torsh" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">دمنوش مخصوص عرشان</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="damnushe_makhsuse_arshan" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<div id="order_menu_deser" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_deser()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">دسر</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_deser()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="no_image.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">دسر مخصوص عرشان</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="deser_arshan" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<div id="order_menu_ghelian" style="width: 100%; position: fixed; overflow: scroll; height: 100vh; display: none; background-color: white; z-index: 10">
+
+
+    <div style="width: 100%; position:fixed; top: 0; background-color: #8f0808; height: 55px">
+
+        <div style="width: 50px; float: right">
+            <img onclick="close_ghelian()" src="back.png" style="width: 30px; height: 30px; float: right; padding: 3px; margin-top: 8px; margin-right: 10px">
+        </div>
+        <div style="width: calc(100% - 100px); float: right">
+            <div style="width: 100%; float: left; text-align: center; font-size: 16px; color: #ffffff; margin-top: 15px;">قلیان</div>
+        </div>
+        <div style="width: 50px; float: right">
+            <div onclick="sabte_ghelian()" style="width: 100%; float: left; margin-left: 10px; margin-top: 10px; font-size: 14px; background-color: #b71919; color: white; text-align: center; padding-top: 5px; padding-bottom: 5px; border-width: 1px; border-style: solid; border-radius: 10px;">ثبت</div>
+        </div>
+
+
+
+
+    </div>
+    <div style="width: 100%; float: left; height: 55px;"></div>
+
+
+
+
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghelian.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">بلوبری</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="bluberi" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghelian.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">آدامس نعناع</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="adams_nana" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghelian.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">انگور شراب</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="angur_morakab" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghelian.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">لاو</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="love" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghelian.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">دوسیب</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="dosib" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghelian.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">پرتقال خامه</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="porteghal_khame" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div  style="width: 33%; float: right">
+        <div  class="card">
+            <img src="ghelian.jpg" alt="Avatar" style="width:100%">
+            <div style="direction: rtl" class="container">
+                <div style="width: 100%; height: 40px; float: left; text-align: right; font-size: 14px; margin-bottom: 20px">محلی لنگه ای</div>
+                <div style="width: 100%; color: black; font-size: 12px; float: right;"><input id="mahali_langei" type="number" style="width: 100%; margin-bottom: 10px; padding-top: 8px; padding-bottom: 8px; text-align: center" placeholder="0"></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<span id="pre_text_sms" style="display: none; direction: rtl"></span>
+
+
+
+</body>
+
+
+<script>
+
+
+
+
+
+    var room_number_text = '';
+    var text_order_pish_ghaza = '';
+    var text_order_break_fast = '';
+    var text_order_ghaza = '';
+    var text_order_asrane = '';
+    var text_order_nushidani_sard = '';
+    var text_order_nushidani_garm = '';
+
+    var text_order_damnush = '';
+    var text_order_deser = '';
+    var text_order_ghelian = '';
+
+
+
+
+    function resturant_clicked(){
+        document.getElementById('order_menu_resturant').style.display = 'block';
+        document.getElementById('first_page').style.display = 'none';
+    }
+    function close_resturant_clicked(){
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+    }
+    function sabte_pish_ghaza(){
+        var tedad_soop = parseInt(document.getElementById('soop').value.trim());
+        var tedad_dal_adas = parseInt(document.getElementById('dal_adas').value.trim());
+
+
+        if(tedad_soop > 0){
+            if (text_order_pish_ghaza == ''){
+                text_order_pish_ghaza = 'سوپ ' + tedad_soop;
+            }else{
+                text_order_pish_ghaza = text_order_pish_ghaza + '----' +  'سوپ ' + tedad_soop;
+            }
+        }
+
+        if(tedad_dal_adas > 0){
+            if (text_order_pish_ghaza == ''){
+                text_order_pish_ghaza = 'دال عدس ' + tedad_dal_adas;
+            }else{
+                text_order_pish_ghaza = text_order_pish_ghaza + '----' +  'دال عدس ' + tedad_dal_adas;
+            }
+        }
+
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+
+    }
+
+
+
+
+    function sabte_nahaei(){
+
+
+
+        const encodedMessage = encodeURIComponent('----'+'شماره اتاق '+room_number_text+'----'+text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian);
+        const smsUri = format_sms + encodedMessage;
+        location.href = smsUri;
+        // var finalll_sms = ;
+        // document.getElementById('pre_text_sms').innerHTML = finalll_sms;
+        // window.open(format_sms+encodeURIComponent('----'+'شماره اتاق '+room_number_text+'----'+text_order_break_fast + text_order_ghaza + text_order_ghelyan));
+    }
+
+
+
+    function sabte_info_user(){
+        var room_nummber = parseInt(document.getElementById('room_number').value.trim());
+        if (room_nummber > 0){
+            room_number_text = room_nummber;
+            document.getElementById('info_user').style.display = 'none';
+            document.getElementById('first_page').style.display = 'block';
+        }else{
+            alert('شماره اتاق خود را وارد کنید!');
+        }
+    }
+
+
+
+    var deviceName = '';
+
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        Datalogic: function() {
+            return navigator.userAgent.match(/DL-AXIS/i);
+        },
+        Bluebird: function() {
+            return navigator.userAgent.match(/EF500/i);
+        },
+        Honeywell: function() {
+            return navigator.userAgent.match(/CT50/i);
+        },
+        Zebra: function() {
+            return navigator.userAgent.match(/TC70|TC55/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
+        }
+    };
+
+    if (isMobile.Datalogic())
+        deviceName = 'Datalogic';
+    else if (isMobile.Bluebird())
+        deviceName = 'Bluebird';
+    else if (isMobile.Honeywell())
+        deviceName = 'Honeywell';
+    else if (isMobile.Zebra())
+        deviceName = 'Zebra';
+    else if (isMobile.BlackBerry())
+        deviceName = 'BlackBerry';
+    else if (isMobile.iOS())
+        deviceName = 'iOS';
+    else if ((deviceName == '') && (isMobile.Android()))
+        deviceName = 'Android';
+    else if ((deviceName == '') && (isMobile.Windows()))
+        deviceName = 'Windows';
+
+
+
+    function iOSversion() {
+        if (/iP(hone|od|ad)/.test(navigator.platform)) {
+            // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+            var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+            return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+        }
+    }
+
+    ver = iOSversion();
+
+
+    var format_sms = 'sms:+989140994101?body=';
+
+    if (deviceName == 'iOS'){
+        if (ver[0] > 7) {
+            format_sms = 'sms:+989140994101?&body=';
+        }else{
+            format_sms = 'sms:+989140994101?&body=';
+        }
+    }
+
+
+
+
+
+
+    function pish_ghaza_clicked(){
+
+
+        document.getElementById('order_menu_pish_ghaza').style.display = 'block';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+
+
+    }
+
+
+    function close_pish_ghaza(){
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'block';
+    }
+
+
+
+
+
+    function sobhane_clicked(){
+
+
+        document.getElementById('order_menu_sobhane').style.display = 'block';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+
+
+    }
+
+
+    function close_sobhane(){
+        document.getElementById('order_menu_sobhane').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'block';
+    }
+
+    function sabte_sobhane(){
+        var tedad_nimru = parseInt(document.getElementById('nimru').value.trim());
+        var tedad_khagine_makhsus = parseInt(document.getElementById('khagine_makhsus').value.trim());
+        var tedad_khame_asal = parseInt(document.getElementById('khame_asal').value.trim());
+        var tedad_moraba = parseInt(document.getElementById('moraba').value.trim());
+        var tedad_panir = parseInt(document.getElementById('panir').value.trim());
+        var tedad_susis_tokhm = parseInt(document.getElementById('susis_tokhm').value.trim());
+        var tedad_omlet_makhsus = parseInt(document.getElementById('omlet_makhsus').value.trim());
+        var tedad_adasi = parseInt(document.getElementById('adasi').value.trim());
+        var tedad_noon_sade = parseInt(document.getElementById('noon_sade').value.trim());
+        var tedad_noon_tokhm = parseInt(document.getElementById('noon_tokhm').value.trim());
+
+        if(tedad_nimru > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'نیمرو ' + tedad_nimru;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'نیمرو ' + tedad_nimru;
+            }
+        }
+
+        if(tedad_khagine_makhsus > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'خاگینه مخصوص عرشان ' + tedad_khagine_makhsus;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'خاگینه مخصوص عرشان ' + tedad_khagine_makhsus;
+            }
+        }
+
+        if(tedad_khame_asal > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'خامه عسل ' + tedad_khame_asal;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'خامه عسل ' + tedad_khame_asal;
+            }
+        }
+
+        if(tedad_moraba > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'مربا ' + tedad_moraba;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'مربا ' + tedad_moraba;
+            }
+        }
+
+        if(tedad_panir > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'پنیر ' + tedad_panir;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'پنیر ' + tedad_panir;
+            }
+        }
+
+        if(tedad_susis_tokhm > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'سوسیس تخم مرغ ' + tedad_susis_tokhm;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'سوسیس تخم مرغ ' + tedad_susis_tokhm;
+            }
+        }
+
+        if(tedad_omlet_makhsus > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'املت مخصوص عرشان ' + tedad_omlet_makhsus;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'املت مخصوص عرشان ' + tedad_omlet_makhsus;
+            }
+        }
+
+        if(tedad_adasi > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'عدسی ' + tedad_adasi;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'عدسی ' + tedad_adasi;
+            }
+        }
+
+        if(tedad_noon_sade > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'نان محلی ساده ' + tedad_noon_sade;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'نان محلی ساده ' + tedad_noon_sade;
+            }
+        }
+
+        if(tedad_noon_tokhm > 0){
+            if (text_order_break_fast == ''){
+                text_order_break_fast = 'نان محلی تخم مرغی ' + tedad_noon_tokhm;
+            }else{
+                text_order_break_fast = text_order_break_fast + '----' +  'نان محلی تخم مرغی ' + tedad_noon_tokhm;
+            }
+        }
+
+        document.getElementById('order_menu_sobhane').style.display = 'none';
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+
+    }
+
+
+
+
+    function ghaza_clicked(){
+
+        document.getElementById('order_menu_ghaza').style.display = 'block';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+    }
+
+
+    function close_ghaza(){
+        document.getElementById('order_menu_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'block';
+    }
+
+
+
+
+    function sabte_ghaza(){
+
+
+        console.log('e');
+
+        var tedad_sambuse_meygu = parseInt(document.getElementById('sambuse_meygu').value.trim());
+        var tedad_sambuse_kuli = parseInt(document.getElementById('sambuse_kuli').value.trim());
+        var tedad_ghalye_mahi = parseInt(document.getElementById('ghalye_mahi').value.trim());
+        var tedad_ghalye_meygu = parseInt(document.getElementById('ghalye_meygu').value.trim());
+        var tedad_meygu_do_piazi = parseInt(document.getElementById('meygu_do_piazi').value.trim());
+        var tedad_mahi_shir = parseInt(document.getElementById('mahi_shir').value.trim());
+        var tedad_havari_meygu = parseInt(document.getElementById('havari_meygu').value.trim());
+        var tedad_morgh_makhsus = parseInt(document.getElementById('morgh_makhsus').value.trim());
+        var tedad_susis_bandari = parseInt(document.getElementById('susis_bandari').value.trim());
+        var tedad_pudini_kuli = parseInt(document.getElementById('pudini_kuli').value.trim());
+        var tedad_ghorme_sabzi = parseInt(document.getElementById('ghorme_sabzi').value.trim());
+        var tedad_gheyme = parseInt(document.getElementById('gheyme').value.trim());
+        var tedad_guguli_morgh = parseInt(document.getElementById('guguli_morgh').value.trim());
+        var tedad_juje_saheli = parseInt(document.getElementById('juje_saheli').value.trim());
+        var tedad_sadaf = parseInt(document.getElementById('sadaf').value.trim());
+        var tedad_kharchang = parseInt(document.getElementById('kharchang').value.trim());
+        var tedad_labester = parseInt(document.getElementById('labester').value.trim());
+        var tedad_mahi_morakab = parseInt(document.getElementById('mahi_morakab').value.trim());
+        var tedad_kotlet = parseInt(document.getElementById('kotlet').value.trim());
+        var tedad_polo_irani = parseInt(document.getElementById('polo_irani').value.trim());
+        var tedad_polo_khareji = parseInt(document.getElementById('polo_khareji').value.trim());
+
+        var tedad_ab = parseInt(document.getElementById('ab').value.trim());
+        var tedad_nushabe = parseInt(document.getElementById('nushabe').value.trim());
+        var tedad_energy_za = parseInt(document.getElementById('energy_za').value.trim());
+        var tedad_limunad = parseInt(document.getElementById('limunad').value.trim());
+
+
+        if(tedad_ab > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'آب ' + tedad_ab;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'آب ' + tedad_ab;
+            }
+        }
+        if(tedad_nushabe > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'نوشابه ' + tedad_nushabe;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'نوشابه ' + tedad_nushabe;
+            }
+        }
+        if(tedad_energy_za > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'انرژی زا ' + tedad_energy_za;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'انرژی زا ' + tedad_energy_za;
+            }
+        }
+        if(tedad_limunad > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'لیموناد ' + tedad_limunad;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'لیموناد ' + tedad_limunad;
+            }
+        }
+
+
+
+        if(tedad_sambuse_meygu > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'سبوسه میگو ' + tedad_sambuse_meygu;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'سبوسه میگو ' + tedad_sambuse_meygu;
+            }
+        }
+
+        if(tedad_sambuse_kuli > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'سمبوسه کولی ' + tedad_sambuse_kuli;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'سمبوسه کولی ' + tedad_sambuse_kuli;
+            }
+        }
+
+        if(tedad_ghalye_mahi > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'قلیه ماهی ' + tedad_ghalye_mahi;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'قلیه ماهی ' + tedad_ghalye_mahi;
+            }
+        }
+
+        if(tedad_ghalye_meygu > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'قلیه میگو ' + tedad_ghalye_meygu;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'قلیه میگو ' + tedad_ghalye_meygu;
+            }
+        }
+
+        if(tedad_meygu_do_piazi > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'میگو دو پیازه ' + tedad_meygu_do_piazi;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'میگو دو پیازه ' + tedad_meygu_do_piazi;
+            }
+        }
+
+        if(tedad_mahi_shir > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'ماهی سرخ شده(شیر) ' + tedad_mahi_shir;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'ماهی سرخ شده(شیر) ' + tedad_mahi_shir;
+            }
+        }
+
+        if(tedad_havari_meygu > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'حواری میگو ' + tedad_havari_meygu;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'حواری میگو ' + tedad_havari_meygu;
+            }
+        }
+
+        if(tedad_morgh_makhsus > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'مرغ مخصوص عرشان ' + tedad_morgh_makhsus;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'مرغ مخصوص عرشان ' + tedad_morgh_makhsus;
+            }
+        }
+
+        if(tedad_susis_bandari > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'سوسیس بندری ' + tedad_susis_bandari;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'سوسیس بندری ' + tedad_susis_bandari;
+            }
+        }
+
+        if(tedad_pudini_kuli > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'پودینی کولی ' + tedad_pudini_kuli;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'پودینی کولی ' + tedad_pudini_kuli;
+            }
+        }
+
+
+        if(tedad_ghorme_sabzi > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'قرمه سبزی ' + tedad_ghorme_sabzi;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'قرمه سبزی ' + tedad_ghorme_sabzi;
+            }
+        }
+
+        if(tedad_gheyme > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'قیمه ' + tedad_gheyme;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'قیمه ' + tedad_gheyme;
+            }
+        }
+
+        if(tedad_guguli_morgh > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'گوبولی مرغ ' + tedad_guguli_morgh;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'گوبولی مرغ ' + tedad_guguli_morgh;
+            }
+        }
+
+        if(tedad_juje_saheli > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'جوجه ساحلی ' + tedad_juje_saheli;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'جوجه ساحلی ' + tedad_juje_saheli;
+            }
+        }
+
+        if(tedad_sadaf > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'صدف ' + tedad_sadaf;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'صدف ' + tedad_sadaf;
+            }
+        }
+
+
+        if(tedad_kharchang > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'خرچنگ ' + tedad_kharchang;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'خرچنگ ' + tedad_kharchang;
+            }
+        }
+
+        if(tedad_labester > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'لابستر ' + tedad_labester;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'لابستر ' + tedad_labester;
+            }
+        }
+
+        if(tedad_mahi_morakab > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'ماهی مرکب ' + tedad_mahi_morakab;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'ماهی مرکب ' + tedad_mahi_morakab;
+            }
+        }
+
+        if(tedad_kotlet > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'کتلت ' + tedad_kotlet;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'کتلت ' + tedad_kotlet;
+            }
+        }
+
+
+        if(tedad_polo_irani > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'پلو ایرانی ' + tedad_polo_irani;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'پلو ایرانی ' + tedad_polo_irani;
+            }
+        }
+
+        if(tedad_polo_khareji > 0){
+            if (text_order_ghaza == ''){
+                text_order_ghaza = 'پلو خارجی ' + tedad_polo_khareji;
+            }else{
+                text_order_ghaza = text_order_ghaza + '----' +  'پلو خارجی ' + tedad_polo_khareji;
+            }
+        }
+
+
+
+        document.getElementById('order_menu_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+
+    }
+
+
+
+
+    function close_cafe(){
+        document.getElementById('order_menu_cafe').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'block';
+    }
+
+    function menu_cafe_clicked(){
+        document.getElementById('order_menu_cafe').style.display = 'block';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+    }
+
+
+    function asrane_clicked(){
+        document.getElementById('order_menu_cafe').style.display = 'none';
+        document.getElementById('order_menu_asrane').style.display = 'block';
+
+    }
+    function close_asrane(){
+        document.getElementById('order_menu_cafe').style.display = 'block';
+        document.getElementById('order_menu_asrane').style.display = 'none';
+    }
+
+
+    function sabte_asrane(){
+        var tedad_tumushi = parseInt(document.getElementById('tumushi').value.trim());
+        var tedad_sini_mive = parseInt(document.getElementById('sini_mive').value.trim());
+        var tedad_servise_chay_shirini = parseInt(document.getElementById('servise_chay_shirini').value.trim());
+
+
+
+
+        if(tedad_tumushi > 0){
+            if (text_order_asrane == ''){
+                text_order_asrane = 'توموشی ' + tedad_tumushi;
+            }else{
+                text_order_asrane = text_order_asrane + '----' +  'توموشی ' + tedad_tumushi;
+            }
+        }
+
+        if(tedad_sini_mive > 0){
+            if (text_order_asrane == ''){
+                text_order_asrane = 'سینی میوه ' + tedad_sini_mive;
+            }else{
+                text_order_asrane = text_order_asrane + '----' +  'سینی میوه ' + tedad_sini_mive;
+            }
+        }
+
+        if(tedad_servise_chay_shirini > 0){
+            if (text_order_asrane == ''){
+                text_order_asrane = 'سرویس چای و شیرینی ' + tedad_servise_chay_shirini;
+            }else{
+                text_order_asrane = text_order_asrane + '----' +  'سرویس چای و شیرینی ' + tedad_servise_chay_shirini;
+            }
+        }
+
+
+        document.getElementById('order_menu_asrane').style.display = 'none';
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+    }
+
+
+
+    function nushidani_sard_clicked(){
+        document.getElementById('order_menu_cafe').style.display = 'none';
+        document.getElementById('order_menu_nushidani_sard').style.display = 'block';
+
+    }
+    function close_nushidani_sard(){
+        document.getElementById('order_menu_cafe').style.display = 'block';
+        document.getElementById('order_menu_nushidani_sard').style.display = 'none';
+    }
+
+    function sabte_nushidani_sard(){
+        var tedad_smuti_ostovaei = parseInt(document.getElementById('smuti_ostovaei').value.trim());
+        var tedad_hendevane = parseInt(document.getElementById('hendevane').value.trim());
+        var tedad_smuti_makhsuse_arshan = parseInt(document.getElementById('smuti_makhsuse_arshan').value.trim());
+        var tedad_khakshir = parseInt(document.getElementById('khakshir').value.trim());
+        var tedad_bahar_narenj = parseInt(document.getElementById('bahar_narenj').value.trim());
+
+        var tedad_ice_americano = parseInt(document.getElementById('ice_americano').value.trim());
+        var tedad_ice_latte = parseInt(document.getElementById('ice_latte').value.trim());
+        var tedad_ice_tea = parseInt(document.getElementById('ice_tea').value.trim());
+        var tedad_tootfarangi = parseInt(document.getElementById('tootfarangi').value.trim());
+        var tedad_sheyk = parseInt(document.getElementById('sheyk_hendevane').value.trim());
+        var tedad_sheyk_shokolat = parseInt(document.getElementById('shokolat').value.trim());
+
+
+        if(tedad_smuti_ostovaei > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'اسموتی استوایی ' + tedad_smuti_ostovaei;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'اسموتی استوایی ' + tedad_smuti_ostovaei;
+            }
+        }
+        if(tedad_hendevane > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'اسموتی هندوانه ' + tedad_hendevane;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'اسموتی هندوانه ' + tedad_hendevane;
+            }
+        }
+
+        if(tedad_smuti_makhsuse_arshan > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'اسموتی مخصوص عرشان ' + tedad_smuti_makhsuse_arshan;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'اسموتی مخصوص عرشان ' + tedad_smuti_makhsuse_arshan;
+            }
+        }
+
+        if(tedad_khakshir > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'خاکشیر ' + tedad_khakshir;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'خاکشیر ' + tedad_khakshir;
+            }
+        }
+
+        if(tedad_bahar_narenj > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'بهار نارنج ' + tedad_bahar_narenj;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'بهار نارنج ' + tedad_bahar_narenj;
+            }
+        }
+
+        if(tedad_sheyk > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'شیک هندوانه ' + tedad_sheyk;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'شیک هندوانه ' + tedad_sheyk;
+            }
+        }
+
+        if(tedad_sheyk_shokolat > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'شیک شکلات ' + tedad_sheyk_shokolat;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'شیک شکلات ' + tedad_sheyk_shokolat;
+            }
+        }
+
+        if(tedad_tootfarangi > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'شیک توت فرنگی ' + tedad_tootfarangi;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'شیک توت فرنگی ' + tedad_tootfarangi;
+            }
+        }
+
+        if(tedad_ice_americano > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'آیس آمریکانو ' + tedad_ice_americano;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'آیس آمریکانو ' + tedad_ice_americano;
+            }
+        }
+
+        if(tedad_ice_latte > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'آیس لته ' + tedad_ice_latte;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'آیس لته ' + tedad_ice_latte;
+            }
+        }
+
+        if(tedad_ice_tea > 0){
+            if (text_order_nushidani_sard == ''){
+                text_order_nushidani_sard = 'آیس تی ' + tedad_ice_tea;
+            }else{
+                text_order_nushidani_sard = text_order_nushidani_sard + '----' +  'آیس تی ' + tedad_ice_tea;
+            }
+        }
+
+
+
+        document.getElementById('order_menu_nushidani_sard').style.display = 'none';
+        document.getElementById('order_menu_asrane').style.display = 'none';
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+    }
+
+
+    function nushidani_garm_clicked(){
+        document.getElementById('order_menu_cafe').style.display = 'none';
+        document.getElementById('order_menu_nushidani_garm').style.display = 'block';
+
+    }
+    function close_nushidani_garm(){
+        document.getElementById('order_menu_cafe').style.display = 'block';
+        document.getElementById('order_menu_nushidani_garm').style.display = 'none';
+    }
+
+    function sabte_nushidani_garm(){
+
+        var tedad_ghahve_tork = parseInt(document.getElementById('ghahve_tork').value.trim());
+        var tedad_sperso = parseInt(document.getElementById('sperso').value.trim());
+        var tedad_americano = parseInt(document.getElementById('americano').value.trim());
+        var tedad_latte = parseInt(document.getElementById('latte').value.trim());
+        var tedad_chaye_sade = parseInt(document.getElementById('chaye_sade').value.trim());
+        var tedad_chay_crack = parseInt(document.getElementById('chay_crack').value.trim());
+        var tedad_crack_sperso = parseInt(document.getElementById('crack_sperso').value.trim());
+        var tedad_masala = parseInt(document.getElementById('masala').value.trim());
+        var tedad_capocino = parseInt(document.getElementById('capocino').value.trim());
+
+
+        if(tedad_ghahve_tork > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'قهوه ترک ' + tedad_ghahve_tork;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'قهوه ترک ' + tedad_ghahve_tork;
+            }
+        }
+
+        if(tedad_sperso > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'اسپرسو ' + tedad_sperso;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'اسپرسو ' + tedad_sperso;
+            }
+        }
+
+        if(tedad_americano > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'آمریکانو ' + tedad_americano;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'آمریکانو ' + tedad_americano;
+            }
+        }
+
+        if(tedad_latte > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'لته ' + tedad_latte;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'لته ' + tedad_latte;
+            }
+        }
+
+        if(tedad_chaye_sade > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'چای ساده ' + tedad_chaye_sade;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'چای ساده ' + tedad_chaye_sade;
+            }
+        }
+
+        if(tedad_chay_crack > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'چای کرک ' + tedad_chay_crack;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'چای کرک ' + tedad_chay_crack;
+            }
+        }
+
+        if(tedad_crack_sperso > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'کرک اسپرسو ' + tedad_crack_sperso;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'کرک اسپرسو ' + tedad_crack_sperso;
+            }
+        }
+
+        if(tedad_masala > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'چای ماسالا ' + tedad_masala;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'چای ماسالا ' + tedad_masala;
+            }
+        }
+
+        if(tedad_capocino > 0){
+            if (text_order_nushidani_garm == ''){
+                text_order_nushidani_garm = 'کاپوچینو ' + tedad_capocino;
+            }else{
+                text_order_nushidani_garm = text_order_nushidani_garm + '----' +  'کاپوچینو ' + tedad_capocino;
+            }
+        }
+
+        document.getElementById('order_menu_nushidani_garm').style.display = 'none';
+        document.getElementById('order_menu_nushidani_sard').style.display = 'none';
+        document.getElementById('order_menu_asrane').style.display = 'none';
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+
+    }
+
+
+
+
+    function damnush_clicked(){
+        document.getElementById('order_menu_cafe').style.display = 'none';
+        document.getElementById('order_menu_damnush').style.display = 'block';
+
+    }
+    function close_damnush(){
+        document.getElementById('order_menu_damnush').style.display = 'none';
+        document.getElementById('order_menu_cafe').style.display = 'block';
+    }
+
+    function sabte_damnush(){
+        var tedad_damnushe_torsh = parseInt(document.getElementById('damnushe_torsh').value.trim());
+        var tedad_damnushe_makhsuse_arshan = parseInt(document.getElementById('damnushe_makhsuse_arshan').value.trim());
+
+
+
+
+
+        if(tedad_damnushe_torsh > 0){
+            if (text_order_damnush == ''){
+                text_order_damnush = 'دمنوش ترش ' + tedad_damnushe_torsh;
+            }else{
+                text_order_damnush = text_order_damnush + '----' +  'دمنوش ترش ' + tedad_damnushe_torsh;
+            }
+        }
+
+        if(tedad_damnushe_makhsuse_arshan > 0){
+            if (text_order_damnush == ''){
+                text_order_damnush = 'دمنوش مخصوص عرشان ' + tedad_damnushe_makhsuse_arshan;
+            }else{
+                text_order_damnush = text_order_damnush + '----' +  'دمنوش مخصوص عرشان ' + tedad_damnushe_makhsuse_arshan;
+            }
+        }
+
+
+        document.getElementById('order_menu_damnush').style.display = 'none';
+        document.getElementById('order_menu_asrane').style.display = 'none';
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+
+    }
+
+
+
+
+    function deser_clicked(){
+        document.getElementById('order_menu_cafe').style.display = 'none';
+        document.getElementById('order_menu_deser').style.display = 'block';
+
+    }
+    function close_deser(){
+        document.getElementById('order_menu_cafe').style.display = 'block';
+        document.getElementById('order_menu_deser').style.display = 'none';
+    }
+
+    function sabte_deser(){
+
+        var tedad_deser_arshan = parseInt(document.getElementById('deser_arshan').value.trim());
+
+
+
+
+
+
+        if(tedad_deser_arshan > 0){
+            if (text_order_deser == ''){
+                text_order_deser = 'دسر مخصوص عرشان ' + tedad_deser_arshan;
+            }else{
+                text_order_deser = text_order_deser + '----' +  'دسر مخصوص عرشان ' + tedad_deser_arshan;
+            }
+        }
+
+        document.getElementById('order_menu_deser').style.display = 'none';
+        document.getElementById('order_menu_damnush').style.display = 'none';
+        document.getElementById('order_menu_asrane').style.display = 'none';
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+
+    }
+
+
+
+    function ghelian_clicked(){
+        document.getElementById('order_menu_cafe').style.display = 'none';
+        document.getElementById('order_menu_ghelian').style.display = 'block';
+
+    }
+    function close_ghelian(){
+        document.getElementById('order_menu_cafe').style.display = 'block';
+        document.getElementById('order_menu_ghelian').style.display = 'none';
+    }
+
+    function sabte_ghelian(){
+
+        var tedad_bluberi = parseInt(document.getElementById('bluberi').value.trim());
+        var tedad_adams_nana = parseInt(document.getElementById('adams_nana').value.trim());
+        var tedad_angur_morakab = parseInt(document.getElementById('angur_morakab').value.trim());
+        var tedad_love = parseInt(document.getElementById('love').value.trim());
+        var tedad_dosib = parseInt(document.getElementById('dosib').value.trim());
+        var tedad_porteghal_khame = parseInt(document.getElementById('porteghal_khame').value.trim());
+        var tedad_mahali_langei = parseInt(document.getElementById('mahali_langei').value.trim());
+
+
+
+
+
+        if(tedad_bluberi > 0){
+            if (text_order_ghelian == ''){
+                text_order_ghelian = 'قلیان بلوبری ' + tedad_bluberi;
+            }else{
+                text_order_ghelian = text_order_ghelian + '----' +  'قلیان بلوبری ' + tedad_bluberi;
+            }
+        }
+
+        if(tedad_adams_nana > 0){
+            if (text_order_ghelian == ''){
+                text_order_ghelian = 'قلیان آدامس نعناع ' + tedad_adams_nana;
+            }else{
+                text_order_ghelian = text_order_ghelian + '----' +  'قلیان آدامس نعناع ' + tedad_adams_nana;
+            }
+        }
+
+        if(tedad_angur_morakab > 0){
+            if (text_order_ghelian == ''){
+                text_order_ghelian = 'قلیان انگور مرکب ' + tedad_angur_morakab;
+            }else{
+                text_order_ghelian = text_order_ghelian + '----' +  'قلیان انگور مرکب ' + tedad_angur_morakab;
+            }
+        }
+
+        if(tedad_love > 0){
+            if (text_order_ghelian == ''){
+                text_order_ghelian = 'قلیان لاو ' + tedad_love;
+            }else{
+                text_order_ghelian = text_order_ghelian + '----' +  'قلیان لاو ' + tedad_love;
+            }
+        }
+
+        if(tedad_dosib > 0){
+            if (text_order_ghelian == ''){
+                text_order_ghelian = 'قلیان دوسیب ' + tedad_dosib;
+            }else{
+                text_order_ghelian = text_order_ghelian + '----' +  'قلیان دوسیب ' + tedad_dosib;
+            }
+        }
+
+        if(tedad_porteghal_khame > 0){
+            if (text_order_ghelian == ''){
+                text_order_ghelian = 'قلیان پرتقال خامه ' + tedad_porteghal_khame;
+            }else{
+                text_order_ghelian = text_order_ghelian + '----' +  'قلیان پرتقال خامه ' + tedad_porteghal_khame;
+            }
+        }
+
+        if(tedad_mahali_langei > 0){
+            if (text_order_ghelian == ''){
+                text_order_ghelian = 'قلیان محلی لنگه ای ' + tedad_mahali_langei;
+            }else{
+                text_order_ghelian = text_order_ghelian + '----' +  'قلیان محلی لنگه ای ' + tedad_mahali_langei;
+            }
+        }
+
+        document.getElementById('order_menu_ghelian').style.display = 'none';
+        document.getElementById('order_menu_deser').style.display = 'none';
+        document.getElementById('order_menu_damnush').style.display = 'none';
+        document.getElementById('order_menu_asrane').style.display = 'none';
+        document.getElementById('order_menu_pish_ghaza').style.display = 'none';
+        document.getElementById('order_menu_resturant').style.display = 'none';
+        document.getElementById('first_page').style.display = 'block';
+        document.getElementById('text_order_final').innerHTML = 'سفارش شما = ' + text_order_pish_ghaza + text_order_break_fast + text_order_ghaza + text_order_asrane + text_order_nushidani_sard + text_order_nushidani_garm + text_order_damnush + text_order_deser + text_order_ghelian;
+        document.getElementById('final_order').style.display = 'block';
+
+
+    }
+</script>
+
+</html>
